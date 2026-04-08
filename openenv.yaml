@@ -1,0 +1,52 @@
+id: data-cleaning-env
+name: Intelligent Data Cleaning Environment
+description: >
+  A reinforcement learning environment where agents learn to clean messy datasets
+  through multi-step decision making. The environment simulates real-world data
+  cleaning challenges including missing values, duplicates, and inconsistent formatting.
+
+version: 1.0.0
+
+entry_point: app:app
+
+tags:
+  - reinforcement-learning
+  - data-cleaning
+  - decision-making
+  - openenv
+
+tasks:
+  - id: easy
+    description: Remove duplicate rows from dataset
+    difficulty: easy
+
+  - id: medium
+    description: Handle missing values appropriately
+    difficulty: medium
+
+  - id: hard
+    description: Fully clean dataset with multiple issues
+    difficulty: hard
+
+observation_space:
+  type: object
+  properties:
+    dataset_preview:
+      type: array
+    issues:
+      type: object
+
+action_space:
+  type: string
+  enum:
+    - remove_duplicates
+    - fill_missing_mean
+    - fill_missing_mode
+    - drop_rows
+    - normalize_text
+    - analyze_data
+    - stop
+
+reward_range:
+  min: 0.0
+  max: 1.0

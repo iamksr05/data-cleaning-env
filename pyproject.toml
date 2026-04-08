@@ -1,0 +1,21 @@
+[project]
+name = "data-cleaning-env"
+version = "0.1.0"
+description = "Intelligent Data Cleaning Environment"
+authors = [
+  { name="Karan" }
+]
+dependencies = [
+  "fastapi",
+  "uvicorn",
+  "pydantic",
+  "requests",
+  "openenv-core>=0.2.0"
+]
+
+[project.scripts]
+server = "app:main"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
